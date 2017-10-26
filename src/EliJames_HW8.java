@@ -56,7 +56,7 @@ public class EliJames_HW8 {
 
     @SuppressWarnings( "unchecked" ) // Suppressing warning due to (E[]) cast of Object.
     public GenericStack( int initSize ) {
-   	  if ( initSize > 0 && initSize < INITIAL_STACK_SIZE_LIMIT )	
+      if ( initSize > 0 && initSize < INITIAL_STACK_SIZE_LIMIT )	
         stack = (E[]) new Object[initSize];
       else
     	throw new IllegalArgumentException();
@@ -64,7 +64,7 @@ public class EliJames_HW8 {
     }
     
     public boolean isEmpty() {
-	  return (size == 0);
+      return (size == 0);
     }
 
     public int getSize() { 
@@ -79,8 +79,8 @@ public class EliJames_HW8 {
     }
   
     public E push( E e ) {
-	  if ( stack.length == size ) 
-	    stack = resizeStack( stack );
+      if ( stack.length == size ) 
+        stack = resizeStack( stack );
       stack[size++] = e;
       return e;
     }
@@ -96,10 +96,10 @@ public class EliJames_HW8 {
     private E[] resizeStack( E[] current ) {
       @SuppressWarnings( "unchecked" ) // Warning due to (E[]) cast of Object.
       E[] copy = (E[]) new Object[current.length*2];
-	  int i=0;
-	  for ( E e : current )
-	    copy[i++] = e;
-	  return copy;
+      int i=0;
+      for ( E e : current )
+        copy[i++] = e;
+      return copy;
     }
 	  
     @Override
